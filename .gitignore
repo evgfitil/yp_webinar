@@ -1,4 +1,7 @@
 .vscode/
 flask_env/
 __pycache__/
-
+nginx/
+Dockerfile
+docker-compose.yaml
+docker-compose.yml
