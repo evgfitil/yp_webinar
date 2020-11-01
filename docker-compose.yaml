@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  yp-web:
+    image: evgfitil/yp-webinar
+    container_name: yp-web
+    command: gunicorn wsgi:app -w 4 --bind 0:5000
+    networks:
+      - yp
+    expose:
+      - 5000
+  nginx:
+    build: ./nginx
+    container_name: yp-nginx
+    ports:
+      - 80:80
+    networks:
+      - yp
+    depends_on:
+      - yp-web
+
+networks:
+  yp:
+    external: false
