@@ -12,13 +12,23 @@ services:
   nginx:
     build: ./nginx
     container_name: yp-nginx
-    ports:
-      - 80:80
+    expose:
+      - 80
     networks:
       - yp
+      - traefik
     depends_on:
       - yp-web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx_yp.rule=Host(`test.ea-praktikum.ml`)"
+      - "traefik.http.routers.nginx_yp.entrypoints=websecure"
+      - "traefik.http.routers.nginx_yp.tls.certresolver=myresolver"
+      - "traefik.docker.network=traefik"
 
 networks:
+  traefik:
+    external:
+      name: traefik
   yp:
     external: false
