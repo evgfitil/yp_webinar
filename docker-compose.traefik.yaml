@@ -20,6 +20,8 @@ services:
       - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
       - "--certificatesresolvers.myresolver.acme.email=evgfiitl@yandex.ru"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+      # Let's Encrypt staging server
+      - "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
     ports:
       - "80:80"
       - "443:443"
