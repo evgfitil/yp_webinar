@@ -4,7 +4,7 @@
 
 Документация Traefik https://doc.traefik.io/traefik/
 
-Оффициальный Traefik Docker image https://hub.docker.com/_/traefik
+Официальный Traefik Docker image https://hub.docker.com/_/traefik
 
 **Примеры конфигурационных файлов:**
 
