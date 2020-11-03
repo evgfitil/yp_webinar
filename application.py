@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def say_hello():
-    return "Здесь должно быть приложение"
+    return "Здесь есть приложение."
 
 
 if __name__ == '__main__':
